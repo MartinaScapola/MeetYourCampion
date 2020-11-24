@@ -3,13 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <Link REL=StyleSheet HREF="style.css" TYPE="text/css" MEDIA=screen>
+    <title>MeetYourChampion</title>
 </head>
 <body>  
     <div class="app">
-        <input type="search" v-model="filterChampion" class="filterName">
-        <p v-for="champion in filteredChampions" class="title">{{ champion.name }}</p>
+        <div class="box"> 
+            <div class="titles">
+                <h1>MEET YOUR CHAMPION</h1>
+                <h3> Una web para conocer a todos los campeones del League of Legends y sus caracteristicas.</h3>
+            </div>
+            <div class="search">
+                <img src="https://icongr.am/entypo/magnifying-glass.svg?size=89&color=03101a" class="search-icon"/>
+                <input type="search" v-model="filterChampion" class="filterName">
+            </div>
+            <div class="champions">
+                <div v-for="champion in filteredChampions" class="champion-box"> 
+                    <div v-bind:style="{backgroundImage: 'url('+champion.thumbImg+')'}" class="image-box">
+                    </div>
+                    <p class="name"> {{ champion.name }} </p>
+                </div>
+            </div>
+        </div>    
+        
     </div>
+    <footer class="footer">
+        <div class="social">
+            <a target="_blank" href="https://github.com/MartinaScapola" class="social-link"><img src="https://icongr.am/feather/github.svg?size=70&color=03101a" alt="Github" class="icon"></a>
+            <a target="_blank" href="https://twitter.com/MarScapola" class="social-link"><img src="https://icongr.am/feather/twitter.svg?size=70&color=03101a" alt="Twitter" class="icon"></a>
+            <a target="_blank" href="https://www.instagram.com/luaailustrada/" class="social-link"><img src="https://icongr.am/feather/instagram.svg?size=70&color=03101a" alt="Instagram" class="icon"></a>
+            <a target="_blank" href="https://www.linkedin.com/in/martinascapola/" class="social-link"><img src="https://icongr.am/feather/linkedin.svg?size=70&color=03101a" alt="Linkedin" class="icon"></a>
+        </div>
+        <div class="made-by">
+            <p> made with 🧡 by Lua</p>
+        </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="app.js"></script>
 </body>

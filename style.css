@@ -1,0 +1,136 @@
+@font-face {
+    font-family: Friz Quadrata;
+    src: url(FrizQuadrataRegular.ttf);
+  }
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    border: 0;
+    font-size: 12pt;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #a57d35;
+    font-family: Friz Quadrata;
+    background-color: #03101a;
+}
+
+h1 {
+    font-size: 40pt;
+    margin-bottom: 0px;
+}
+
+h3 {
+    font-weight: lighter;
+}
+
+.box {
+    width: 100%;
+    max-width: 800px;
+    padding: 30px;
+}
+
+.search-icon {
+    position: absolute;
+    width: 40px;
+    padding: 5px;
+    margin: 5px 10px 0px 0px;
+    opacity: 0.6;
+}
+
+.search {
+    display:flex;
+    justify-content: flex-end;
+}
+
+.titles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.filterName {
+    width: 100%;
+    height: 50px;
+    font-size: larger;
+    outline: 0;
+    border:none;
+    background-image:none;
+    background-color: #80878c;
+    box-shadow: 0px 15px 50px -15px #a57d35;
+    border-radius: 10px;
+    border: 1px solid #a57d35;
+    margin-bottom: 30px;
+}
+
+.champions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: grey;
+}
+
+.champion-box {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 10px 0px;
+}
+
+.image-box {
+    width: 110px;
+    height: 110px;
+    background-size: cover;
+    margin: 5px;
+    border: 1px solid #a57d35;
+    background-color: grey;
+}
+
+.image-box:hover {
+    background-blend-mode: soft-light;
+}
+
+.name {
+    flex: 0 0 auto;
+    margin: 5px;
+}
+
+.footer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 25vh;
+    background-color: #a57d35;
+}
+
+.social {
+    margin-top: 40px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social .icon {
+    width: 35px;
+    margin-right: 40px;
+}
+
+.social-link:last-of-type .icon {
+    margin: 0;
+}
+
+.made-by {
+    color: #03101a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}

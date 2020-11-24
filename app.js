@@ -15,8 +15,10 @@ const vue =  new Vue(
                 const championsList = []
 
                 for (cham in lolData.data) {
-                    const champion = (lolData.data[cham])
-                    championsList.push(champion)
+                    const champion = (lolData.data[cham]);
+                    const thumbimg = `https://static.u.gg/assets/lol/riot_static/10.23.1/img/champion/${champion.image.full}`;
+                    champion.thumbImg = thumbimg;
+                    championsList.push(champion);
                 }      
                 this.champions = championsList
                 this.filteredChampions = championsList
