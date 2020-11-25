@@ -8,7 +8,25 @@
 </head>
 <body>  
     <div class="app">
-        <div class="box"> 
+        <div class="page-two" v-if="isChampionModalOpen">
+
+                <div v-bind:style="{backgroundImage: 'url('+championInfo.fullimage+')'}" class="image-full">
+                </div>
+                <div class="modalDataWrapper">
+                    <h1> {{ championInfo.name.toUpperCase() }}</h1>
+                    <h3> {{ championInfo.lore }}</h3>
+                    <h1> HECHIZOS</h1>
+                    <div class="content">
+                        <div v-for="spell in championInfo.spells" class="box-info">
+                            <img :src="spell.icon"/> 
+                            <h3>{{ spell.name.toUpperCase() }}</h3>
+                            <p>{{ spell.description }}</p>
+                            
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="page-one"> 
             <div class="titles">
                 <h1>MEET YOUR CHAMPION</h1>
                 <h3> Una web para conocer a todos los campeones del League of Legends y sus caracteristicas.</h3>
@@ -18,14 +36,13 @@
                 <input type="search" v-model="filterChampion" class="filterName">
             </div>
             <div class="champions">
-                <div v-for="champion in filteredChampions" class="champion-box"> 
+                <div v-for="champion in filteredChampions" class="champion-box" @click="selectChampionHandler(champion.id)"> 
                     <div v-bind:style="{backgroundImage: 'url('+champion.thumbImg+')'}" class="image-box">
                     </div>
                     <p class="name"> {{ champion.name }} </p>
                 </div>
             </div>
-        </div>    
-        
+        </div>   
     </div>
     <footer class="footer">
         <div class="social">

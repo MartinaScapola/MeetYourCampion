@@ -20,6 +20,63 @@ body {
     background-color: #03101a;
 }
 
+.page-two {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #03101a;
+    z-index: 1;
+}
+
+.image-full {
+    box-shadow: 0px 20px 80px -10px black;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    max-width: 600px;
+    min-height: 100%;
+}
+
+.modalDataWrapper {
+    flex: 1 1 auto;
+    padding: 70px;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.content {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+.box-info {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    border: 1px solid  #a57d35;
+    background-color: #79643d;
+    color:  #03101a;
+    border-radius: 10px;
+    box-shadow: 0px 20px 30px -15px black;
+}
+
+.box-info:hover {
+    background-color: #a57d35;
+    transition: background-color 0.9s;
+}
+
+
 h1 {
     font-size: 40pt;
     margin-bottom: 0px;
@@ -29,7 +86,7 @@ h3 {
     font-weight: lighter;
 }
 
-.box {
+.page-one {
     width: 100%;
     max-width: 800px;
     padding: 30px;
@@ -69,6 +126,11 @@ h3 {
     border-radius: 10px;
     border: 1px solid #a57d35;
     margin-bottom: 30px;
+    transition: background-color 0.5s;
+}
+
+.filterName:focus {
+    background-color: rgb(204, 204, 204);
 }
 
 .champions {
@@ -107,7 +169,6 @@ h3 {
     width: 100%;
     margin: 0;
     padding: 0;
-    height: 25vh;
     background-color: #a57d35;
 }
 
