@@ -8,36 +8,34 @@
 </head>
 <body>  
     <div class="app">
-        <div class="page-two" v-if="isChampionModalOpen">
-
-                <div v-bind:style="{backgroundImage: 'url('+championInfo.fullimage+')'}" class="image-full">
-                </div>
-                <div class="modalDataWrapper">
-                    <h1> {{ championInfo.name.toUpperCase() }}</h1>
-                    <h3> {{ championInfo.lore }}</h3>
-                    <h1> HECHIZOS</h1>
-                    <div class="content">
-                        <div v-for="spell in championInfo.spells" class="box-info">
-                            <img :src="spell.icon"/> 
-                            <h3>{{ spell.name.toUpperCase() }}</h3>
-                            <p>{{ spell.description }}</p>
-                            
-                        </div>
+        <div class="pageTwo" v-if="isChampionModalOpen">
+            <img class="exit" @click="CloseChampionModal()" src="https://icongr.am/feather/x-circle.svg?size=128&color=a57d35" />
+            <div v-bind:style="{backgroundImage: 'url('+championInfo.fullimage+')'}" class="fullImage"></div>
+            <div class="modalDataWrapper">
+                <h1 class="championName"> {{ championInfo.name.toUpperCase() }}</h1>
+                <h4> {{ championInfo.lore }}</h4>
+                <div class="cards">
+                    <div v-for="spell in championInfo.spells" class="cardContent">
+                        <img :src="spell.icon"/> 
+                        <h3>{{ spell.name.toUpperCase() }}</h3>
+                        <p v-html="spell.description"></p>
                     </div>
                 </div>
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eaque, praesentium maxime quos illum neque blanditiis quaerat vel temporibus eius qui laudantium officia eligendi minus quia ipsum dolores ab consequuntur.</p>
+            </div>
         </div>
-        <div class="page-one"> 
+        <div class="pageOne"> 
             <div class="titles">
-                <h1>MEET YOUR CHAMPION</h1>
-                <h3> Una web para conocer a todos los campeones del League of Legends y sus caracteristicas.</h3>
+                <h1 class="titleOne">MEET YOUR CHAMPION</h1>
+                <h3 class="subtitle"> Una web para conocer a todos los campeones del League of Legends y sus caracteristicas.</h3>
             </div>
             <div class="search">
-                <img src="https://icongr.am/entypo/magnifying-glass.svg?size=89&color=03101a" class="search-icon"/>
+                <img src="https://icongr.am/entypo/magnifying-glass.svg?size=89&color=03101a" class="searchIcon"/>
                 <input type="search" v-model="filterChampion" class="filterName">
             </div>
             <div class="champions">
-                <div v-for="champion in filteredChampions" class="champion-box" @click="selectChampionHandler(champion.id)"> 
-                    <div v-bind:style="{backgroundImage: 'url('+champion.thumbImg+')'}" class="image-box">
+                <div v-for="champion in filteredChampions" class="championBox" @click="selectChampionHandler(champion.id)"> 
+                    <div v-bind:style="{backgroundImage: 'url('+champion.thumbImg+')'}" class="imageBox">
                     </div>
                     <p class="name"> {{ champion.name }} </p>
                 </div>
@@ -46,12 +44,12 @@
     </div>
     <footer class="footer">
         <div class="social">
-            <a target="_blank" href="https://github.com/MartinaScapola" class="social-link"><img src="https://icongr.am/feather/github.svg?size=70&color=03101a" alt="Github" class="icon"></a>
-            <a target="_blank" href="https://twitter.com/MarScapola" class="social-link"><img src="https://icongr.am/feather/twitter.svg?size=70&color=03101a" alt="Twitter" class="icon"></a>
-            <a target="_blank" href="https://www.instagram.com/luaailustrada/" class="social-link"><img src="https://icongr.am/feather/instagram.svg?size=70&color=03101a" alt="Instagram" class="icon"></a>
-            <a target="_blank" href="https://www.linkedin.com/in/martinascapola/" class="social-link"><img src="https://icongr.am/feather/linkedin.svg?size=70&color=03101a" alt="Linkedin" class="icon"></a>
+            <a target="_blank" href="https://github.com/MartinaScapola" class="sociaLink"><img src="https://icongr.am/feather/github.svg?size=70&color=03101a" alt="Github" class="icon"></a>
+            <a target="_blank" href="https://twitter.com/MarScapola" class="socialLink"><img src="https://icongr.am/feather/twitter.svg?size=70&color=03101a" alt="Twitter" class="icon"></a>
+            <a target="_blank" href="https://www.instagram.com/luaailustrada/" class="socialLink"><img src="https://icongr.am/feather/instagram.svg?size=70&color=03101a" alt="Instagram" class="icon"></a>
+            <a target="_blank" href="https://www.linkedin.com/in/martinascapola/" class="socialLink"><img src="https://icongr.am/feather/linkedin.svg?size=70&color=03101a" alt="Linkedin" class="icon"></a>
         </div>
-        <div class="made-by">
+        <div class="madeBy">
             <p> made with 🧡 by Lua</p>
         </div>
     </footer>
