@@ -11,7 +11,7 @@ const vue =  new Vue(
         methods: {
             //This function get the information of all the champions in the League of Legends 
             async getLolData() {
-                const lolData = await fetch("http://ddragon.leagueoflegends.com/cdn/10.23.1/data/es_ES/champion.json")
+                const lolData = await fetch("https://ddragon.leagueoflegends.com/cdn/10.23.1/data/es_ES/champion.json")
                 .then((res) => res.json())
                 .then((data) => (obj = data))
                 .catch((error) => console.log(error));
@@ -40,7 +40,7 @@ const vue =  new Vue(
             },
             //With this function we get the data of an especific champion. 
             async getChampionData(id) {
-                const ChampionData = await fetch(`http://ddragon.leagueoflegends.com/cdn/10.24.1/data/es_ES/champion/${id}.json`)
+                const ChampionData = await fetch(`https://ddragon.leagueoflegends.com/cdn/10.24.1/data/es_ES/champion/${id}.json`)
                 .then((res) => res.json())
                 .then((data) => (obj = data))
                 .catch((error) => console.log(error));
@@ -52,7 +52,7 @@ const vue =  new Vue(
                 
             //same as the last one but with the spells images. 
                 ChampionData.data[id].spells.forEach((spell) => {
-                    const spellicon = `http://ddragon.leagueoflegends.com/cdn/10.24.1/img/spell/${spell.image.full}`
+                    const spellicon = `https://ddragon.leagueoflegends.com/cdn/10.24.1/img/spell/${spell.image.full}`
                     spell.icon = spellicon;
                 })
 
