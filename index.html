@@ -8,9 +8,10 @@
 </head>
 <body>  
     <div class="app">
-        <!-- <div class="loader" v-if="dataIsLoader">
-            <img src="https://i.pinimg.com/originals/3f/38/d4/3f38d4d307856a5df9cc5b03951cf738.gif"/>
-        </div> -->
+        <div class="loader" v-if="DataisLoading">
+            <img class="loaderImage" src="https://i.pinimg.com/originals/3f/38/d4/3f38d4d307856a5df9cc5b03951cf738.gif"/>
+            <p> Cargando...</p>
+        </div>
         <div class="pageTwo" v-if="isChampionModalOpen">
             <img class="exit" @click="CloseChampionModal()" src="https://icongr.am/feather/x-circle.svg?size=128&color=a57d35" />
             <div v-bind:style="{backgroundImage: 'url('+championInfo.fullimage+')'}" class="fullImage"></div>
