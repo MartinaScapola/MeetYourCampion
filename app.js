@@ -16,7 +16,7 @@ const vue =  new Vue(
                 .then((data) => (obj = data))
                 .catch((error) => console.log(error));
                 const championsList = []
-
+                
             //With this loop, we go through all the json and sent the the variable championList. 
                 for (cham in lolData.data) {
                     const champion = (lolData.data[cham]);
@@ -28,6 +28,7 @@ const vue =  new Vue(
             //Then traslate that to "Champion", calling that array with the "this."
                 this.champions = championsList
                 this.filteredChampions = championsList
+                
             },
             //This function is to filter the names of the Champions according what the user type in the input.
             filter() {       
@@ -58,6 +59,7 @@ const vue =  new Vue(
                 console.log(ChampionData.data[id].spells)
                 
                 this.championInfo = ChampionData.data[id]
+                
             },
             //So, this one is for when i click in the image of the champion, we go to the "second page". 
             async selectChampionHandler(id) {

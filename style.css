@@ -20,6 +20,19 @@ body {
     background-color: #03101a;
 }
 
+/* .loader {
+    min-width: 100vw;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #191b1e ;
+    z-index: 1;
+    display:flex; 
+    align-items: center;
+    justify-content: center;
+} */
+
 .pageTwo {
     min-width: 100vw;
     height: 100vh;
@@ -34,9 +47,9 @@ body {
 
 .pageTwo .exit {
     position: absolute;
-    right: 0;
+    right: 30px;
+    top: 20px;
     width: 40px;
-    margin: 20px;
 }
 
 .pageTwo .fullImage {
@@ -44,49 +57,86 @@ body {
     background-size: cover;
     background-position: center;
     width: 100%;
-    max-width: 800px;
+    max-width: 500px;
     min-height: 100%;
+    flex: 1 0 auto;
+    transition: max-width 1s;
 }
+
+.pageTwo .fullImage:hover  {
+    max-width: 80%;
+}
+
+.pageTwo .fullImage:hover ~ .modalDataWrapper {
+    opacity: 0;
+}
+
 
 .pageTwo .modalDataWrapper {
     flex: 1 1 auto;
     padding: 40px;
     align-items: center;
     flex-direction: column;
-    text-align: center;
+    text-align: left;
     overflow-y: auto;
+    transition: opacity 1s;
 }
 
 .pageTwo .modalDataWrapper .championName {
-    font-size: 30pt;
+    font-size: 3.6rem;
+    margin-bottom: 0.6rem;
+}
+
+.pageTwo .modalDataWrapper .championSub {
+    margin-bottom: 5rem;
 }
 
 .pageTwo .modalDataWrapper .cards {
     flex: 1 1 auto;
     display: flex;
     justify-content: center;
-    margin: 30px;
-    height: 350px;
-    padding: 5px;
+    margin:  0px 30px 30px 30px;
+    padding: 30px;
+    align-items: flex-start;
     font-size: 10pt;
 }
 
 .pageTwo .modalDataWrapper .cards .cardContent {
     width: 25%;
-    padding: 10px;
     flex: 1 0 auto;
-    margin: 10px;
-    background-color: #79643d;
+    margin: 20px;
+}
+
+.pageTwo .modalDataWrapper .cards .cardContent .spellTitleWrapper {
+    padding: 10px;
+    background-color: #a57d35;
     color:  #03101a;
+    text-align: center;
     border-radius: 10px;
     box-shadow: 0px 20px 30px -15px black;
     transition: background-color 0.3s;
 }
 
-.pageTwo .modalDataWrapper .cards .cardContent:hover {
-    background-color: #a57d35;
+.pageTwo .modalDataWrapper .cards .cardContent .spellTitleWrapper:hover {
+    background-color: #79643d;
 }
 
+.pageTwo .modalDataWrapper .cards .cardContent .imageSpell {
+    width: 64px;
+    border-radius: 10px;
+}
+
+.pageTwo .modalDataWrapper .cards .cardContent .spellDescription {
+    text-align: left;
+    font-size: 1rem;
+}
+
+.border {
+    width: 80%;
+    margin-left: 10%;
+    border: 1px solid #a57d35;
+    margin-bottom: 60px;
+}
 .pageOne {
     width: 100%;
     max-width: 800px;
@@ -199,10 +249,74 @@ body {
     margin: 0;
 }
 
-.footer .social .madeBy {
+.footer .madeBy {
     color: #03101a;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+}
+
+@media (max-width: 1250px) {
+    .pageTwo {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #03101a;
+        z-index: 1;
+    }
+    .pageTwo .fullImage {
+        box-shadow: 0px 20px 80px -10px black;
+        background-position: center right;
+        max-width: 100%;
+        min-height: 30%;
+    }
+
+    .pageTwo .fullImage:hover  {
+        max-width: 100%;
+    }
+
+    .pageTwo .fullImage:hover ~ .modalDataWrapper {
+        opacity: 1;
+    }
+
+    .pageTwo .modalDataWrapper {
+        flex: 1 1 auto;
+        padding: 10px;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        overflow-y: auto;
+        transition: opacity 1s;
+    }
+    
+    .pageTwo .modalDataWrapper .championName {
+        font-size: 2.6rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .pageTwo .modalDataWrapper .championSub {
+        margin-bottom: 2rem;
+    }
+    
+    .pageTwo .modalDataWrapper .cards {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px;
+        font-size: 1rem;
+    }
+    .pageTwo .modalDataWrapper .cards .cardContent .spellTitleWrapper {
+        background-color: #79643d;
+        width: 150%;
+    }
+
+    .pageTwo .modalDataWrapper .cards .cardContent .spellDescription {
+        text-align: center;
+        font-size: 1rem;
+    }
 }
