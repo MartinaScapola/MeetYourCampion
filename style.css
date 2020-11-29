@@ -319,4 +319,9 @@ body {
         text-align: center;
         font-size: 1rem;
     }
+
+    .pageOne .titles .titleOne {
+        font-size: 20pt;
+        margin-bottom: 0px;
+    }
 }
