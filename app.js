@@ -6,7 +6,8 @@ const vue =  new Vue(
             filterChampion: "", 
             filteredChampions: [],
             championInfo: {},
-            isChampionModalOpen: false
+            isChampionModalOpen: false,
+            dataisLoading: true
         },
         methods: {
             //This function get the information of all the champions in the League of Legends 
@@ -16,7 +17,7 @@ const vue =  new Vue(
                 .then((data) => (obj = data))
                 .catch((error) => console.log(error));
                 const championsList = []
-                
+                this.dataisLoading = false
             //With this loop, we go through all the json and sent the the variable championList. 
                 for (cham in lolData.data) {
                     const champion = (lolData.data[cham]);
@@ -40,10 +41,12 @@ const vue =  new Vue(
             },
             //With this function we get the data of an especific champion. 
             async getChampionData(id) {
+                this.dataisLoading = true
                 const ChampionData = await fetch(`https://ddragon.leagueoflegends.com/cdn/10.24.1/data/es_ES/champion/${id}.json`)
                 .then((res) => res.json())
                 .then((data) => (obj = data))
                 .catch((error) => console.log(error));
+                this.dataisLoading = false
 
             //here we call a url with the image of the champions, but in this case we complete it with the info of the champion. 
                 const fullimage = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${ChampionData.data[id].id}_0.jpg`;

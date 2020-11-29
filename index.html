@@ -8,7 +8,7 @@
 </head>
 <body>  
     <div class="app">
-        <div class="loader" v-if="DataisLoading">
+        <div class="loader" v-if="dataisLoading">
             <img class="loaderImage" src="https://i.pinimg.com/originals/3f/38/d4/3f38d4d307856a5df9cc5b03951cf738.gif"/>
             <p> Cargando...</p>
         </div>
@@ -32,7 +32,7 @@
                 <div class="tipsContent">    
                     <h1> <u>Algunos tips a la hora de jugar con este campeón </u> </h1>    
                     <div class="tips"  v-for="tips in championInfo.allytips">
-                        <p>{{ tips }}</p>
+                        <p class="tipText">{{ tips }}</p>
                     </div>    
                 </div>
             </div>

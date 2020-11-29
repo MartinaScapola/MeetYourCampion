@@ -313,6 +313,7 @@ body {
 
     .pageTwo .modalDataWrapper .championSub {
         margin-bottom: 2rem;
+        font-size: 1.2rem;
     }
     
     .pageTwo .modalDataWrapper .cards {
@@ -324,14 +325,22 @@ body {
         padding: 10px;
         font-size: 1rem;
     }
+
+    .pageTwo .modalDataWrapper .cards .cardContent {
+        width: 100%;
+    }
+
     .pageTwo .modalDataWrapper .cards .cardContent .spellTitleWrapper {
         background-color: #79643d;
-        width: 150%;
     }
 
     .pageTwo .modalDataWrapper .cards .cardContent .spellDescription {
         text-align: center;
-        font-size: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .pageTwo .modalDataWrapper .tipsContent .tipText {
+        font-size: 1.2rem;
     }
 
     .pageOne .titles .titleOne {
