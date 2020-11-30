@@ -78,6 +78,7 @@ const vue =  new Vue(
         },
         mounted() {
             this.getLolData()
+            document.querySelector(".initialLoader").style.display ='none';
         },
         watch: {
             filterChampion() {

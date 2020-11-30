@@ -34,6 +34,10 @@ body {
     justify-content: center;
 }
 
+.loader.initialLoader {
+    z-index: 999;
+}
+
 .loaderImage {
     width: 15%;
 }
